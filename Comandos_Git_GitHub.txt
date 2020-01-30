@@ -1,0 +1,30 @@
+git init (Iniciar o repositorio / diretorio do git local)
+git status (Verificar estado do repositorio, quais arquivos foram alterados)
+git add 'arquivo' (Adicionar arquivo para commit)
+git add . (Adicionar todos os arquivos no repositorio para commit)
+git rm (Remover marcacao do arquivo, o mesmo deixara de ser monitorado)
+git commit (Enviar arquivo que foi alterado / adicionado)
+git commit -m "" (Enviar arquivo que foi alterado / adicionado passando mensagem)
+git config --local user.name "Nome do usuario" (Alterar usuario do projeto informado)
+git config --global user.name "Nome do usuario" (Alterar usuario da maquina)
+git config user.email "E-mail" (Alterar e-mail cadastrado)
+git log (Exibir informacoes das alteracoes e os logs de commit)
+git log --oneline (Exibir informacoes das alteracoes e os logs de commit resumidamente)
+git log -p (Exibir informacoes das alteracoes e os logs de commit com mais informacoes)
+git log --pretty="parametros de formatação" (Exibir informacoes de log passando o parametro de pesquisa)
+git remote add 'nome' 'caminho' (Adicionar repositorio remoto)
+git remote -v (Exibir repositorio remoto)
+git clone 'caminho' (Trazer todos os dados do caminho em questão)
+
+
+
+======================================================
+Observacoes:
+
+HEAD: Estado atual do nosso código, ou seja, onde o Git nos colocou
+Working tree: Local onde os arquivos realmente estão sendo armazenados e editados
+index: Local onde o Git armazena o que será commitado, ou seja, o local entre
+a working tree e o repositório Git em si.
+
+======================================================
+
