@@ -15,7 +15,10 @@ git log --pretty="parametros de formatação" (Exibir informacoes de log passand
 git remote add 'nome' 'caminho' (Adicionar repositorio remoto)
 git remote -v (Exibir repositorio remoto)
 git clone 'caminho' (Trazer todos os dados do caminho em questão)
-
+git checkout "branch" (Mudar de branch)
+git checkout -- "arquivo" (Desfazer alteracao antes de adicionar o arquivo)
+git reset "arquivo" (Desfazer alteracao depois de adicionar o arquivo)
+git revert "arquivo" (Desfazer alteracao depois do commit)
 
 
 ======================================================
