@@ -9,6 +9,7 @@ git config --local user.name "Nome do usuario" (Alterar usuario do projeto infor
 git config --global user.name "Nome do usuario" (Alterar usuario da maquina)
 git config user.email "E-mail" (Alterar e-mail cadastrado)
 git log (Exibir informacoes das alteracoes e os logs de commit)
+git log --graph (Exibir informações em forma de frafico)
 git log --oneline (Exibir informacoes das alteracoes e os logs de commit resumidamente)
 git log -p (Exibir informacoes das alteracoes e os logs de commit com mais informacoes)
 git log --pretty="parametros de formatação" (Exibir informacoes de log passando o parametro de pesquisa)
