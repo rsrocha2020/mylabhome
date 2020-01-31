@@ -20,6 +20,11 @@ git checkout "branch" (Mudar de branch)
 git checkout -- "arquivo" (Desfazer alteracao antes de adicionar o arquivo)
 git reset "arquivo" (Desfazer alteracao depois de adicionar o arquivo)
 git revert "arquivo" (Desfazer alteracao depois do commit)
+git stash "arquivo" (Adicionar arquivo local temporario)
+git stash list (Listar arquivos armazenados temporariamente)
+git stash apply "número do arquivo" (Selecionar o arquivo armazenado para trabalhar novamente)
+git stash drop "Remover arquivo do armazenamento temporario"
+git stash pop "Pegar ultima alteracao adicionada e ja remove-la do stash"
 
 
 ======================================================
