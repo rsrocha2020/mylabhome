@@ -1,0 +1,58 @@
+ARQUITETURA DE SISTEMA
+
+lspci - Listar dispositivos conectados ao slot PCI;
+		lspci -s 01:00.0 -v
+		lspci -s 04:02.0 -k
+		
+lsusb - Listar dispositivos conectados ao slot usb;
+		lsusb -v -d 1781:0c9f
+		
+lsmod - Listar os modulos carregados pelo S.O.;
+		lsmod | igrep -i 'snd_hda_intel'
+
+modprobe - Corrigir problemas de modulos que nao carregaram ou carregaram incorretamente na inicializacao;
+		modprobe -r 'snd_hda_intel' (Comando para descarregar um modulo)
+		/etc/modprobe.d/ (Diretorio onde estao arquivos de configuracoes dos modulos
+		/etc/modprobe.d/blacklist.conf (Arquivo de configuracao de modulos que nao serao carregados na inicializacao)
+
+/proc - Diretorio contem arquivos com informacoes de processos ativos e recursos de hardware;
+
+/sys - Diretorio com informacoes especificas de dispositivos;
+
+/dev - Diretorio com arquivos arquivos particulares de dispositivos de armazenamento;
+		udev - Os discos removiveis (hotplug) sao tratados pelo subsistema "udev" que atualiza os arquivos correspondentes em /dev.
+
+======================================================================================================		
+/etc/init.d/ - Diretorio que contem scripts utilizados para carregamento de cada runlevel e que contem os daemons dos servicos;
+		/etc/rc0.d, /etc/rc1.d, /etc/rc2.d, ....
+		Obs.: Arquivos que são inicializados com a letra K(Kill) serão encerrados. Arquivos inciializados com a letra S(Start) serão iniciliazados.
+
+ubuntu@srvzabbix:/etc$ ls -lh /etc/rc2.d/
+total 0
+lrwxrwxrwx 1 root root 29 mai  3 20:34 K01apache-htcacheclean -> ../init.d/apache-htcacheclean
+lrwxrwxrwx 1 root root 17 mai  3 20:34 S01apache2 -> ../init.d/apache2
+lrwxrwxrwx 1 root root 16 abr 19 04:28 S01apport -> ../init.d/apport
+lrwxrwxrwx 1 root root 13 abr 19 04:27 S01atd -> ../init.d/atd
+lrwxrwxrwx 1 root root 14 abr 19 04:27 S01dbus -> ../init.d/dbus
+lrwxrwxrwx 1 root root 24 mai  3 21:00 S01grafana-server -> ../init.d/grafana-server
+lrwxrwxrwx 1 root root 21 abr 19 04:27 S01grub-common -> ../init.d/grub-common
+lrwxrwxrwx 1 root root 23 abr 19 04:28 S01lvm2-lvmpolld -> ../init.d/lvm2-lvmpolld
+lrwxrwxrwx 1 root root 15 mai  3 17:38 S01snmpd -> ../init.d/snmpd
+lrwxrwxrwx 1 root root 13 abr 19 04:28 S01ssh -> ../init.d/ssh
+lrwxrwxrwx 1 root root 20 out  1 09:44 S01ubuntu-fan -> ../init.d/ubuntu-fan
+lrwxrwxrwx 1 root root 29 abr 19 04:27 S01unattended-upgrades -> ../init.d/unattended-upgrades
+lrwxrwxrwx 1 root root 22 mai  3 21:59 S01zabbix-agent -> ../init.d/zabbix-agent
+lrwxrwxrwx 1 root root 23 mai  3 17:38 S01zabbix-server -> ../init.d/zabbix-server
+
+======================================================================================================
+
+systemd - Principal comando para administração das unidades é: "systemctl"
+		Inciar uma unidade: systemctl start unit.service
+		Interromper uma unidade: systemctl stop unit.service
+		Reiniciar uma unidade: systemctl restart unit.service
+		Status da unidade: systemctl status unit.service
+		Carregar unidade na inicializacao do sistema: systemctl enable unit.service
+		Desativar carregamento da unidade na inicializacao do sistema: systemctl disable unit.service
+		Verificar se sera ou nao carregada na inicializacao do sistema: systemctl is-enabled unit.service
+		
+		

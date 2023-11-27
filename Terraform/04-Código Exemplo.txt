@@ -1,0 +1,43 @@
+## main.tf
+
+provider "aws" {
+  region  = "us-east-1"
+  version = "~> 3.0"
+}
+
+terraform {
+  backend "s3" {
+    # Lembre de trocar o bucket para o seu, não pode ser o mesmo nome
+    bucket = "descomplicando-terraform-gomex-tfstates"
+    key    = "terraform-test.tfstate"
+    region = "us-east-1"
+  }
+}
+
+## output.tf
+
+output "dns_name" {
+  value = aws_instance.web.public_dns
+}
+
+## ec2.tf
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
+
+  owners = ["099720109477"] # Ubuntu
+}
+
+resource "aws_instance" "web" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}

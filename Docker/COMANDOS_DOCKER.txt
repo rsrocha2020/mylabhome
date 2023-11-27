@@ -1,0 +1,28 @@
+
+\\ Segue uma breve lista dos comandos utilizados no Docker:
+
+    docker container ls - exibe todos os containers em execução no momento.
+    docker container ls -a - exibe todos os containers, independente de estarem em execução ou não.
+    docker container run -it NOME_DA_IMAGEM - conecta o terminal que estamos utilizando com o do container.
+    docker container start ID_CONTAINER - inicia o container com id em questão.
+    docker container stop ID_CONTAINER - interrompe o container com id em questão.
+    docker container start -a -i ID_CONTAINER - inicia o container com id em questão e integra os terminais, além de permitir interação entre ambos.
+    docker container rm ID_CONTAINER - remove o container com id em questão.
+    docker container prune - remove todos os containers que estão parados.
+    docker container rmi NOME_DA_IMAGEM - remove a imagem passada como parâmetro.
+    docker container run -d -P --name NOME dockersamples/static-site - ao executar, dá um nome ao container.
+    docker container run -d -p 12345:80 dockersamples/static-site - define uma porta específica para ser atribuída à porta 80 do container, neste caso 12345.
+    docker container run -d -e AUTHOR="Fulano" dockersamples/static-site - define uma variável de ambiente AUTHOR com o valor Fulano no container criado.
+    docker container run -it --mount type=bind,src=/opt/apps,dst=/apps oraclelinux:7.9 - define um volume do tipo bind no container
+    docker container exec -it nome-do-container /bin/bash
+    docker image ls (Listar as imagens que foram "buildadas" localmente)
+    docker image build -t example:1.0 /home/DockerFile (Criar um dockerfile e "buildar" a imagem localmente)
+    docker container cp b4456ee754b7:./docker2.txt /opt/apps/ - copiar arquivo 'docker2.txt' dentro do container para docker host
+    
+
+
+
+
+
+
+
